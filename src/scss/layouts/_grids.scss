@@ -1,0 +1,57 @@
+// レイアウト・CSSグリッド
+
+
+// 変数、ミックスイン、関数
+@use "../global/" as g;
+
+
+
+.grid {
+  display: grid;
+
+  &__item {
+
+    &--4row {
+      grid-row: span 4;
+      display: grid;
+      grid-template-rows: subgrid;
+    }
+
+    &--gap0 {
+      gap: 0;
+    }
+
+    &--center {
+      justify-self: center;
+    }
+  }
+
+
+  /* 4カラム */
+  &--4col {
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 20px;
+
+    @include g.mq(sm-min) {
+      grid-template-columns:
+        repeat(4, 1fr);
+    }
+  }
+
+
+  /* PC 3カラム */
+  &--pc3col {
+    grid-template-columns:
+      repeat(auto-fit, minmax(calc((768px - 15px - 40px - 40px) / 3), 1fr));
+    gap: 40px 20px;
+  }
+
+
+  /* PC 4カラム */
+  &--pc4col {
+    grid-template-columns:
+      repeat(auto-fit, minmax(calc((768px - 15px - 40px - 60px) / 4), 1fr));
+    gap: 40px 20px;
+  }
+}

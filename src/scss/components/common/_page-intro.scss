@@ -1,0 +1,36 @@
+// 共通・ページイントロダクション
+
+
+// 変数、ミックスリン、関数
+@use "../../global/" as g;
+
+
+
+.pageIntro {
+  padding-block: 50px;
+  line-height: 1.8;
+
+  &__catch {
+    margin-block: -4px;
+    font-size: g.rem(22);
+
+    &Text {
+      font-weight: 500;
+    }
+  }
+
+  &__text {
+    margin-top: 40px;
+  }
+
+
+  @media (width >= 768px) {
+    padding-block: 80px;
+
+    &__catch {
+      margin-block: -14px;
+      @include g.rem-fz(36);
+      text-align: center;
+    }
+  }
+}

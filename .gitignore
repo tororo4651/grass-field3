@@ -1,0 +1,10 @@
+# ディレクトリ
+node_modules
+dist
+public
+
+
+# ファイル
+.DS_Store
+Thumbs.db
+*.code-workspace

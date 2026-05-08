@@ -1,0 +1,81 @@
+// パーツ・見出し
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global/_index.scss";
+
+
+
+/* 1 */
+.primaryHeading {
+  line-height: 1;
+  display: grid;
+  row-gap: 10px;
+  justify-items: center;
+
+  &__ja {
+    order: 1;
+    @include index.rem-fz(30);
+    font-weight: bold;
+    letter-spacing: .2em;
+    margin-inline-start: .2em;
+  }
+
+  &__en {
+    color: index.$mainColor;
+    @include index.enFont;
+    font-size: index.rem(20);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-inline-start: .2em;
+  }
+
+
+  @include index.mq {
+    row-gap: 15px;
+    justify-items: normal;
+
+    &__ja {
+      font-size: index.rem(48);
+      margin-inline-start: 0;
+    }
+
+    &__en {
+      font-size: index.rem(24);
+      margin-inline-start: 0;
+    }
+  }
+}
+
+
+
+
+/* 2 */
+.secondaryHeading {
+  @include index.rem-fz(24);
+  font-weight: bold;
+  line-height: 1.5;
+  display: grid;
+  row-gap: 20px;
+
+  &::after {
+    content: "";
+    width: 50px;
+    border-top: solid 1px;
+  }
+
+  &--white {
+    color: index.$whiteColor;
+  }
+
+  &--center {
+    justify-items: center;
+  }
+
+
+  @include index.mq {
+    @include index.rem-fz(28);
+  }
+}

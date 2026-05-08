@@ -1,0 +1,76 @@
+// 補足関連情報・お問合わせ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global";
+
+
+
+.contactAside {
+  padding: 50px 20px;
+  background-color: global.$mainColor;
+  color: global.$whiteColor;
+  display: grid;
+  row-gap: 40px;
+  justify-items: center;
+
+  &__text {
+    @include global.rem-fz(14);
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__tel {
+    display: grid;
+    row-gap: 20px;
+    justify-items: center;
+
+    &Number {
+      @include global.enFont;
+      @include global.rem-fz(24);
+      line-height: 1;
+      text-transform: uppercase;
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 5px;
+      align-items: baseline;
+    }
+
+    &Large {
+      color: global.$whiteColor;
+      @include global.rem-fz(40);
+      font-weight: 500;
+      text-decoration-line: none;
+
+      @include global.hover-focus {
+        color: global.$whiteColor;
+      }
+    }
+
+    &Text {
+      font-size: global.rem(14);
+    }
+  }
+
+
+  @include global.mq(md-min) {
+    padding: 80px 20px;
+
+    &__tel {
+
+      &Number {
+        @include global.rem-fz(30);
+      }
+
+      &Large {
+        @include global.rem-fz(48)
+      }
+
+      &Text {
+        @include global.rem-fz(16);
+      }
+    }
+  }
+}

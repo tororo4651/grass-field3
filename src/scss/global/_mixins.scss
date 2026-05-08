@@ -1,0 +1,112 @@
+// ミックスイン
+
+
+
+// ビルトインモジュール
+@use "sass:map";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:meta";
+
+
+
+
+// 変数
+@use "variables" as v;
+
+
+
+
+// メディアクエリ
+@mixin mq($breakpoint: "md-min") {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    @media #{map.get(v.$breakpoints, $breakpoint)} {
+      @content;
+    }
+  } @else {
+    @error "$breakpoints に、#{$breakpoint} というキーはありません。";
+  }
+}
+
+
+@mixin mq-min($width: 768) {
+  @media (min-width: $width + px) {
+    @content;
+  }
+}
+
+
+@mixin mq-max($width: 767) {
+  @media (max-width: $width + "px") {
+    @content;
+  }
+}
+
+
+
+
+// フォントファミリー
+@mixin baseFont {
+  font-family: "Noto Sans JP", sans-serif;
+  // font-family: v.$baseFont;
+}
+
+
+@mixin enFont {
+  font-family: "Oswald", sans-serif;
+  // font-family: v.$enFont;
+}
+
+
+
+
+// rem に変換（フォントサイズ）
+@mixin rem-fz($size, $root: 16) {
+  font-size: math.div($size, $root) * 1rem;
+  // font-size: math.div($size, $root) + rem;
+    // "rem" は、不可。
+  // font-size: calc($size / $root * 1rem);
+  // font-size: calc($size / $root) + rem;
+    // "rem" は、不可。
+}
+
+
+// rem に変換（マージン）
+@mixin rem-margin($size, $root: 16) {
+  margin: math.div($size, $root) * 1rem;
+  // margin: math.div($size, $root) + rem;
+  // margin: calc($size / $root * 1rem);
+  // margin: calc($size / $root) + rem;
+}
+
+
+
+
+// マウスオーバー
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+
+// マウスオーバーとフォーカス
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+
+
+
+// clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

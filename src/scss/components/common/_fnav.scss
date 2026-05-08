@@ -1,0 +1,48 @@
+// 共通・フッターナビゲーション
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global" as g;
+
+
+
+.fNav {
+
+  &__item {
+    border-bottom: solid 1px g.$darkGrayColor;
+  }
+
+  &__link {
+    display: block;
+    padding: 1em 20px;
+    color: g.$whiteColor;
+    @include g.rem-fz(14);
+    font-weight: bold;
+    text-decoration-line: none;
+  }
+
+
+  @include g.mq {
+
+    &__list {
+      border-left: solid 1px g.$darkGrayColor;
+      display: grid;
+      grid-auto-flow: column;
+    }
+
+    &__item {
+      border-bottom: none;
+      border-right: solid 1px g.$darkGrayColor;
+    }
+
+    &__link {
+      padding: 2px 1em;
+
+      @include g.hover-focus {
+        text-decoration-line: underline;
+        text-underline-position: under;
+      }
+    }
+  }
+}

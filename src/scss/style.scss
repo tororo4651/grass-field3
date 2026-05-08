@@ -1,0 +1,95 @@
+// @charset "UTF-8";
+
+// Sass は、CSS にコンパイルされる際、"2バイト文字（全角文字）" が含まれていると、自動的に "@charset "UTF-8";" が "最初の行" に出力される。 そのため、Sassファイルに @charset を書く必要はありません。 Sassファイルに 2バイト文字が一切ない場合、@charset は "出力されません" 。 また、BOM に関しては 2バイト文字の有無に関わらず BOM "なし" になる。 アウトプットスタイルを、CSS を圧縮する「compressed」にすると、@charset は "削除されてコンパイルされる" 。しかし、そのままだと文字化けの可能性があるため、BOM "あり" の CSSファイルが生成される。 BOM によってエンコードを判別させることで対策している。 このように Sass では文字化け対策されているので、普段文字コードを意識する必要はほとんどありません。
+
+
+
+
+/* CSSカスタムプロパティ・CSS変数・カスケード変数 */
+// @use "settings/variables";
+
+
+
+
+/* リセットCSS・リセットスタイルシート */
+@use "./bases/_reset.scss";
+
+
+
+
+/* ベース */
+@use "./bases/bases";
+
+
+
+
+/* レイアウト */
+
+@use "layouts/layouts";
+
+/* CSSグリッド */
+@use "layouts/grids";
+
+
+
+
+/* コンポーネント・パーツ */
+
+/* 見出し */
+@use "components/parts/headings";
+
+/* ボタン */
+@use "./components/parts/buttons";
+
+
+
+
+/* コンポーネント・共通 */
+
+/* ヘッダー */
+@use "components/common/header";
+
+/* グローバルナビゲーション */
+@use "components/common/gnav";
+
+/* パンくずリスト */
+@use "./components/common/breadcrumb";
+
+/* フッター */
+@use "components/common/footer";
+
+/* フッターナビゲーション */
+@use "components/common/fnav";
+
+/* ページヘッダー */
+@use "components/common/page-header.scss";
+/* ページイントロダクション */
+@use "components/common/page-intro";
+
+
+
+
+/* コンポーネント・その他 */
+
+/* 補足関連情報・お問合わせ */
+@use "components/other/asides/contact-aside";
+
+/* ヒーローイメージ・トップページ */
+@use "./components/other/heroes/top-hero";
+
+/* セクション・プライマリ */
+@use "./components/other/sections/_primary-section.scss";
+
+/* カード・プライマリ */
+@use "./components/other/cards/primary-card";
+/* カード・セカンダリ */
+@use "components/other/cards/secondary-card";
+
+/* 配置の切り替え・サービス */
+@use "components/other/alternates/service-alternate";
+
+
+
+
+/* Utilityクラス・ユーティリティクラス・汎用クラス・ヘルパークラス */
+@use "utilities/utilities";

@@ -1,0 +1,81 @@
+// 変数
+
+
+
+// 可
+  // -（ ハイフン ）
+  // _（ アンダースコア・アンダーバー ）
+  // マルチバイト文字（ 日本語 ）
+
+
+// 不可
+  // 数字を先頭にできない。
+  // 連続した -（ ハイフン ）から始まっている名前。
+
+
+
+
+// カラー
+$mainColor: #37952F;
+$lightMainColor1: #70CC33;
+$lightMainColor2: #EAF5E9;
+$baseColor: $lightMainColor2;
+$accentColor: #FF7600;
+$blackColor: #333333;
+$whiteColor: #ffffff;
+$grayColor: #cccccc;
+$darkGrayColor: #707070;
+$lightGrayColor1: #eeeeee;
+$lightGrayColor2: #E7E7E7;
+$textColor: $blackColor;
+// $fontColor
+$errorColor: #df5656;
+// $linkColor
+
+
+
+
+// フォント
+$baseFont: "Noto Sans JP", sans-serif;
+$enFont: "Oswald", sans-serif;
+
+
+
+
+// 幅
+// $smallWidth
+// $mediumWidth
+// $largeWidth
+// $smallHeight
+// $mediumHeight
+// $largeHeight
+// $baseWidth
+// $mainWidth  メインエリアの幅。
+// $sidebarWidth  サイドバーの幅。
+
+
+
+
+// サイズ
+// $smallSize
+// $mediumSize
+// $largeSize
+
+
+
+
+// ブレイクポイント
+$breakpoints: (
+  xs-min: '(width >= 375px), print',
+  xs-max: '(width <= 374px), print',
+  sm-min: '(width >= 568px), print',
+  sm-max: '(width <= 567px), print',
+  md-min: '(width >= 768px), print',
+  md-max: '(width <= 767px), print',
+  lg-min: '(width >= 992px), print',
+  lg-max: '(width <= 991px), print',
+  xl-min: '(width >= 1200px), print',
+  xl-max: '(width <= 1199px), print',
+  xxl-min: '(width >= 1366px), print',
+  xxl-max: '(width <= 1365px), print'
+);

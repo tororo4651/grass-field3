@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<%- include('./ejs/common/_head', { pageTitle: 'お問合わせ', description: 'お問合わせページの説明文', path: '../' }) %>
+
+
+<body class="contact">
+
+<%- include('ejs/common/_header', { el: 'p', path: '../' }) %>
+
+
+<main>
+
+  <section class="pageHeader pageHeader--contact">
+    <h1 class="pageheader__heading primaryHeading">
+      <span class="primaryHeading__ja">お問合わせ</span>
+
+      <span class="primaryHeading__en" lang="en">Contact</span>
+    </h1>
+
+    <p class="pageHeader__lead">弊社の事業・商品へのご質問・お問い合わせ等は以下のフォームからご連絡下さい。</p>
+  </section>
+
+  <div class="l-container">
+
+
+
+  </div><!-- /.l-container -->
+
+</main>
+
+
+<nav class="breadcrumb u-pc-only" aria-label="パンくずリスト">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a class="breadcrumb__link" href="/">ホーム</a>
+    </li>
+
+    <li class="breadcrumb__item">
+      <span aria-current="page">お問合わせ</span>
+    </li>
+  </ol>
+</nav>
+
+
+<%- include('./ejs/common/_footer') %>
+
+
+
+
+</body>
+</html>

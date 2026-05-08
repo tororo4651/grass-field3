@@ -1,0 +1,176 @@
+// 共通・グローバルナビゲーション
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+/* ボタン */
+.gNavBtn {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  background-color: g.$mainColor;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+
+  &__line {
+    position: relative;
+    width: 25px;
+    height: 2px;
+    background-color: g.$whiteColor;
+
+    .is-gNavOpen & {
+      background-color: transparent;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: g.$whiteColor;
+      transition: rotate .3s;
+
+      .is-gNavOpen & {
+        translate: 0;
+      }
+    }
+
+    &::before {
+      translate: 0 -8px;
+
+      .is-gNavOpen & {
+        rotate: 45deg;
+      }
+    }
+
+    &::after {
+      translate: 0 8px;
+
+      .is-gNavOpen & {
+        rotate: -45deg;
+      }
+    }
+  }
+
+
+  @include g.mq('lg-min') {
+    display: none;
+  }
+}
+
+
+
+
+/* メニュー */
+.gNav {
+
+  @include g.mq(lg-max) {
+    position: fixed;
+    inset: 50px -100% 0 100%;
+    width: 100%;
+    height: calc(100vh - 50px);
+    height: calc(100dvh - 50px);
+    background-color: g.$whiteColor;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .is-gNavOpen & {
+      inset: 50px 0 0;
+    }
+
+    &__list {
+      border-top: solid 1px g.$lightGrayColor1;
+    }
+
+    &__item {
+      border-bottom: solid 1px g.$lightGrayColor1;
+    }
+
+    &__link {
+      display: block;
+      padding: 15px 20px 15px 15px;
+      border-left: solid 5px transparent;
+      color: g.$textColor;
+      font-weight: 500;
+      // line-height: 1.2;
+      text-decoration-line: none;
+      text-transform: uppercase;
+
+      @include g.hover-focus {
+        color: g.$mainColor;
+      }
+
+      .home &--home,
+      .service &--service,
+      .products &--products,
+      .company &--company,
+      .recruit &--recruit,
+      .contact &--contact {
+        border-color: g.$mainColor;
+      }
+    }
+  }
+
+
+  @include g.mq(lg-min) {
+
+    &__list {
+      display: grid;
+      grid-auto-flow: column;
+    }
+
+    &__link {
+      display: block;
+      padding: 1em;
+      color: g.$textColor;
+      @include g.rem-fz(18);
+      font-weight: 500;
+      text-decoration-line: none;
+      text-transform: uppercase;
+      transition: color .3s;
+
+      @include g.hover-focus {
+        color: g.$mainColor;
+      }
+
+      .home &--home,
+      .service &--service,
+      .products &--products,
+      .company &--company,
+      .recruit &--recruit,
+      .contact &--contact {
+
+        &::after {
+          content: "";
+          display: block;
+          height: 4px;
+          background-color: g.$mainColor;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+// スクロール禁止
+// .is-gNavOpen body {
+//   position: fixed;
+//   width: 100%;
+//   overflow: hidden;
+// }
+
+// or
+
+html.is-gNavOpen,
+html.is-gNavOpen body {
+  height: 100%;
+  overflow-y: hidden;
+}

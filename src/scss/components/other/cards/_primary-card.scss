@@ -1,0 +1,72 @@
+// カード・プライマリ
+
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as *;
+
+
+
+.primaryCard {
+  max-width: 400px;
+  padding-block-end: 20px;
+  border: solid 1px $grayColor;
+  color: $textColor;
+  line-height: 1.5;
+  text-decoration-line: none;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.07);
+  transition: all .3s;
+  display: grid;
+  align-content: start;
+
+  @include hover-focus {
+    border-color: $lightMainColor1;
+    color: $textColor;
+  }
+
+  &__heading {
+    margin: 30px 20px 0;
+    @include rem-fz(20);
+    font-weight: bold;
+  }
+
+  &__text {
+    margin: 10px 20px 0;
+  }
+
+  &__btn {
+    margin: 30px 20px 0;
+    transition: opacity .3s;
+
+    .primaryCard:hover &,
+    .primaryCard:focus & {
+      opacity: .8;
+    }
+
+    &::after {
+      transition: translate .3s;
+
+      .primaryCard:hover &,
+      .primaryCard:focus & {
+        translate: 5px 0;
+      }
+    }
+  }
+
+  &__figure {
+    order: -1;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 256 / 164;
+    object-fit: cover;
+    transition: scale .5s;
+
+    .primaryCard:hover &,
+    .primaryCard:focus & {
+      scale: 1.2;
+    }
+  }
+}

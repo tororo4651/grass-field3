@@ -1,0 +1,28 @@
+// 共通・ページヘッダー
+
+
+// 変数、ミックスリン、関数
+@use "../../global/" as g;
+
+
+
+.pageHeader {
+  height: calc(200 / 375 * 100vw);
+  padding: 0 20px;
+  // aspect-ratio: 375 / 200;
+  // padding:  calc(70 / 375 * 100%) 20px;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  align-content: center;
+
+  &--service {
+    background-image: url(../../../images/service/bg_header_service.jpg);
+  }
+
+
+  @include g.mq {
+    height: 400px;
+    padding: 0 50px;
+  }
+}

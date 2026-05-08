@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<%- include('ejs/common/_head', { description: 'トップページの説明文', path: './' }) %>
+
+
+<body class="home">
+
+<%- include('ejs/common/_header', { el: 'h1', attr: 'header__heading', path: './' }) %>
+
+
+<main>
+
+  <div class="topHero">
+    <div class="topHero__inner l-container">
+      <p class="topHero__catch">
+        キャッチコピーの<br>
+        文章がはいりますキャッチコピーの文章が入ります
+      </p><!-- /.topHero__catch -->
+
+      <figure class="topHero__figure">
+        <img class="topHero__image" src="images/top/mv_illust.svg" alt="">
+      </figure>
+    </div><!-- /.topHero__inner.l-container -->
+  </div><!-- /.topHero -->
+
+
+  <div class="l-container">
+
+    <section class="primarySection">
+      <h2 class="primarySection__heading" lang="en">Service</h2>
+
+      <div class="primarySection__list grid grid--pc3col">
+        <a class="grid__item grid__item--4row grid__item--gap0 grid__item--center primaryCard" href="#">
+          <h3 class="primaryCard__heading">サービス名1</h3>
+
+          <p class="primaryCard__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+
+          <p class="primaryCard__btn moreBtn" aria-label="サービス名について詳しく見る"><span class="moreBtn__text">詳しく見る</span></p>
+
+          <figure class="primaryCard__figure">
+            <img class="primaryCard__image" src="./images/service/ph_service01.jpg" alt="" width="800" height="500">
+          </figure>
+        </a>
+
+        <a class="grid__item grid__item--4row grid__item--gap0 grid__item--center primaryCard" href="#">
+          <h3 class="primaryCard__heading">サービス名2</h3>
+
+          <p class="primaryCard__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+
+          <p class="primaryCard__btn moreBtn" aria-label="サービス名について詳しく見る"><span class="moreBtn__text">詳しく見る</span></p>
+
+          <figure class="primaryCard__figure">
+            <img class="primaryCard__image" src="./images/service/ph_service02.jpg" alt="" width="800" height="500">
+          </figure>
+        </a>
+
+        <a class="grid__item grid__item--4row grid__item--gap0 grid__item--center primaryCard" href="#">
+          <h3 class="primaryCard__heading">サービス名3</h3>
+
+          <p class="primaryCard__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+
+          <p class="primaryCard__btn moreBtn" aria-label="サービス名について詳しく見る"><span class="moreBtn__text">詳しく見る</span></p>
+
+          <figure class="primaryCard__figure">
+            <img class="primaryCard__image" src="./images/service/ph_service03.jpg" alt="" width="800" height="500">
+          </figure>
+        </a>
+      </div>
+
+      <a class="primarySection__link primaryBtn primaryBtn--center" href="#">事業内容について</a>
+    </section>
+
+
+    <section class="primarySection">
+      <h2 class="primarySection__heading" lang="en">Pick Up</h2>
+
+      <ul class="primarySection__list grid grid--pc4col">
+        <li class="grid__item secondaryCard">
+          <a class="secondaryCard__link" href="#">
+            <h3 class="secondaryCard__heading">
+              <i class="secondaryCard__headingIcon fas fa-chevron-right" aria-hidden="true"></i>商品タイトル
+            </h3>
+
+            <figure class="secondaryCard__figure">
+              <img class="secondaryCard__image" src="./images/products/ph_dmy01.jpg" alt="" width="532" height="341">
+            </figure>
+          </a>
+        </li>
+
+        <li class="grid__item secondaryCard">
+          <a class="secondaryCard__link" href="#">
+            <h3 class="secondaryCard__heading">
+              <i class="secondaryCard__headingIcon fas fa-chevron-right" aria-hidden="true"></i>商品タイトル
+            </h3>
+
+            <figure class="secondaryCard__figure">
+              <img class="secondaryCard__image" src="./images/products/ph_dmy01.jpg" alt="" width="532" height="341">
+            </figure>
+          </a>
+        </li>
+
+        <li class="grid__item secondaryCard">
+          <a class="secondaryCard__link" href="#">
+            <h3 class="secondaryCard__heading">
+              <i class="secondaryCard__headingIcon fas fa-chevron-right" aria-hidden="true"></i>長い商品タイトルタイトル最大30文字までありえます
+            </h3>
+
+            <figure class="secondaryCard__figure">
+              <img class="secondaryCard__image" src="./images/products/ph_dmy01.jpg" alt="" width="532" height="341">
+            </figure>
+          </a>
+        </li>
+
+        <li class="grid__item secondaryCard">
+          <a class="secondaryCard__link" href="#">
+            <h3 class="secondaryCard__heading">
+              <i class="secondaryCard__headingIcon fas fa-chevron-right" aria-hidden="true"></i>商品タイトル
+            </h3>
+
+            <figure class="secondaryCard__figure">
+              <img class="secondaryCard__image" src="./images/products/ph_dmy01.jpg" alt="" width="532" height="341">
+            </figure>
+          </a>
+        </li>
+      </ul>
+
+      <a class="primarySection__link primaryBtn primaryBtn--center" href="#">商品紹介について</a>
+    </section>
+
+  </div><!-- /.l-container -->
+
+</main>
+
+
+<%- include('./ejs/other/_contact.ejs') %>
+
+
+<%- include('ejs/common/_footer') %>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+// セクション・プライマリ
+
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+
+.primarySection {
+  padding-block: 50px;
+
+  & + & {
+    padding-block-start: 0;
+  }
+
+  &__heading {
+    width: fit-content;
+    letter-spacing: 0.2em;
+    padding-left: 0.2em;
+    margin-inline: auto;
+    @include g.enFont;
+    @include g.rem-fz(28);
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__link {
+    margin-block-start: 40px;
+  }
+
+
+  @include g.mq() {
+    padding-block: 80px;
+
+    &__heading {
+      @include g.rem-fz(48);
+    }
+
+    &__list {
+      margin-top: 40px;
+    }
+
+    &__link {
+      margin-block-start: 60px;
+    }
+  }
+}
