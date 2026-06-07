@@ -7,22 +7,44 @@
 
 
 .pageHeader {
-  height: calc(200 / 375 * 100vw);
-  padding: 0 20px;
-  // aspect-ratio: 375 / 200;
-  // padding:  calc(70 / 375 * 100%) 20px;
   background-position: center;
   background-size: cover;
   display: grid;
   align-content: center;
 
   &--service {
+    height: calc(200 / 375 * 100vw);
+    padding: 0 20px;
+    // aspect-ratio: 375 / 200;
+    // padding:  calc(70 / 375 * 100%) 20px;
     background-image: url(../../../images/service/bg_header_service.jpg);
+  }
+
+  &--contact {
+    padding: 80px 40px;
+    background-color: g.$lightMainColor2;
+  }
+
+  &__lead {
+    margin-top: 40px;
+    text-align: center;
   }
 
 
   @include g.mq {
-    height: 400px;
-    padding: 0 50px;
+
+    &--service {
+      height: 400px;
+      padding: 0 50px;
+    }
+
+    &--contact {
+      padding: 100px 40px;
+    }
+
+    &__lead {
+      margin-top: 50px;
+    }
   }
+
 }

@@ -6,7 +6,17 @@
 
 
 
-// パソコンのみ
+/* 上マージン */
+@for $i from 1 through 10 {
+  .u-mt#{$i * 10} {
+    margin-top: $i * 10px;
+  }
+}
+
+
+
+
+/* パソコンのみ */
 .u-pc-only {
   display: none !important;
 

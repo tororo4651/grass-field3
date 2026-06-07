@@ -71,7 +71,7 @@
 
 /* コンポーネント・その他 */
 
-/* 補足関連情報・お問合わせ */
+/* 補足関連情報・お問い合わせ */
 @use "components/other/asides/contact-aside";
 
 /* ヒーローイメージ・トップページ */
@@ -79,6 +79,8 @@
 
 /* セクション・プライマリ */
 @use "./components/other/sections/_primary-section.scss";
+/* セクション・セカンダリ */
+@use "./components/other/sections/secondary-section";
 
 /* カード・プライマリ */
 @use "./components/other/cards/primary-card";

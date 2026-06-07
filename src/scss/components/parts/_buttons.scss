@@ -25,11 +25,6 @@
   display: grid;
   place-content: center;
 
-  @include g.hover-focus {
-    background-color: g.$lightMainColor2;
-    color: g.$textColor;
-  }
-
   &--white {
     border-color: g.$whiteColor;
     background-color: transparent;
@@ -47,6 +42,11 @@
 
   &--center {
     margin-inline: auto;
+  }
+
+  @include g.hover-focus {
+    background-color: g.$lightMainColor2;
+    color: g.$textColor;
   }
 }
 
