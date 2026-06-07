@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+
+/*----------------------------------------
+	TOPページ専用
+----------------------------------------*/
+
+
+
+/* main-visual
+----------------------------------------*/
+
+.main-visual {
+  background: var(--c_main);
+  color: var(--c_white);
+}
+
+.main-visual__inner {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px;
+}
+
+.main-visual__image {
+  text-align: center;
+}
+
+.main-visual__catch {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2;
+}
+
+
+@media (min-width: 768px) {
+  .main-visual {
+    padding: 40px 0;
+  }
+
+  .main-visual__inner {
+    max-width: 1080px;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-visual__catch {
+    display: flex;
+    justify-content: center;
+    padding: 0 8.3333%;  /* (90 / 1080) * 100% */
+    font-size: min(3.33vw, 36px);  /* 改行位置キープのため vw で拡縮 */
+  }
+
+  .main-visual__image {
+    flex-shrink: 0;
+    width: 40%;
+  }
+}
+
+
+
+
+/* service
+----------------------------------------*/
+
+
+
+
+/* pickup
+----------------------------------------*/
