@@ -24,7 +24,7 @@
 
   <div class="l-container">
 
-    <section class="secondarySection u-mt50">
+    <section class="secondarySection">
       <h2 class="secondarySection__heading secondaryHeading">お問い合わせについて</h2>
 
       <p class="secondarySection__text">
@@ -40,9 +40,11 @@
       <form class="secondarySection__form contactForm" action="#" method="POST" enctype="application/x-www-form-urlencoded">
 
         <div class="contactForm__item">
-          <lebel class="contactForm__label" for="contactType">お問い合わせ種類</lebel>
+          <div class="contactForm__itemHead">
+            <lebel class="contactForm__label" for="contactType">お問い合わせ種類</lebel>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
           <div class="contactForm__selectWrapper">
             <select class="contactForm__select" id="contactType" name="contactType" required>

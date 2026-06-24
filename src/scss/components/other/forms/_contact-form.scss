@@ -1,0 +1,85 @@
+// フォーム・お問い合わせ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+.contactForm {
+
+  &__item {
+    border-top: dashed 1px g.$grayColor;
+    border-bottom: dashed 1px g.$grayColor;
+    padding-block: 20px;
+    display: grid;
+    row-gap: 10px;
+
+    & + & {
+      border-top: none;
+    }
+  }
+
+  &__label {
+    @include g.rem-fz(18);
+    font-weight: 500;
+  }
+
+  &__tag {
+    margin-inline-start: 10px;
+  }
+
+  &__select {
+    appearance: none;
+    width: 100%;
+    padding: 10px 20px;
+    border: solid 1px g.$darkGrayColor;
+    border-radius: 4px;
+    background-color: g.$whiteColor;
+    @include g.rem-fz(16);
+    font-family: inherit;
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 5px rgba(g.$mainColor, 0.7);
+    }
+  }
+
+  &__selectWrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 20px 0 auto;
+      margin-block: auto;
+      width: 10px;
+      height: 10px;
+      border-left: solid 2px g.$darkGrayColor;
+      border-bottom: solid 2px g.$darkGrayColor;
+      rotate: -45deg;
+    }
+  }
+
+  &__error {
+    display: none;
+  }
+
+
+  @include g.mq() {
+
+    &__item {
+      grid-template-columns:
+        1fr 2fr;
+      column-gap: 40px;
+      row-gap: 0;
+
+      &Head {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;align-items: center;
+      }
+    }
+  }
+
+}

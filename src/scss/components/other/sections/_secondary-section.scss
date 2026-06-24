@@ -7,15 +7,28 @@
 
 
 .secondarySection {
+  padding-block: 50px;
 
   & + & {
-    margin-top: 50px;
+    padding-block-start: 0;
   }
 
   &__heading {
 
     + * {
       margin-top: 20px;
+    }
+  }
+
+
+  @include g.mq() {
+    padding-block: 80px;
+
+    &__heading {
+
+      + * {
+        margin-top: 40px;
+      }
     }
   }
 }

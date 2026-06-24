@@ -41,6 +41,8 @@
 /* ボタン */
 @use "./components/parts/buttons";
 
+/* タグ */
+@use "components/parts/tags";
 
 
 
@@ -89,6 +91,9 @@
 
 /* 配置の切り替え・サービス */
 @use "components/other/alternates/service-alternate";
+
+/* フォーム・お問い合わせ */
+@use "components/other/forms/contact-form";
 
 
 
