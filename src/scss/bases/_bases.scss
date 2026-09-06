@@ -15,6 +15,7 @@ body {
 
 a {
   color: g.$mainColor;
+  text-underline-position: under;
   transition: color .3s;
 
   @include g.hover {

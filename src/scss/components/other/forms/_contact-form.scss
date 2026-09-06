@@ -8,6 +8,8 @@
 
 .contactForm {
 
+  $this: ".contactForm__item";
+
   &__item {
     border-top: dashed 1px g.$grayColor;
     border-bottom: dashed 1px g.$grayColor;
@@ -18,6 +20,25 @@
     & + & {
       border-top: none;
     }
+
+    &--attribute {
+      grid-template-columns:
+        auto 1fr;
+      column-gap: 32px;
+      justify-items: start;
+
+      #{$this}Head {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &Head {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: start;
+      align-items: center;
+      column-gap: 15px;
+    }
   }
 
   &__label {
@@ -25,23 +46,30 @@
     font-weight: 500;
   }
 
-  &__tag {
-    margin-inline-start: 10px;
-  }
-
-  &__select {
+  &__select,
+  &__textarea,
+  &__input {
     appearance: none;
     width: 100%;
     padding: 10px 20px;
     border: solid 1px g.$darkGrayColor;
     border-radius: 4px;
     background-color: g.$whiteColor;
-    @include g.rem-fz(16);
     font-family: inherit;
+    @include g.rem-fz(16);
     outline: none;
 
     &:focus {
       box-shadow: 0 0 5px rgba(g.$mainColor, 0.7);
+    }
+
+    #{$this}.is-error & {
+      border-color: g.$errorColor;
+      color: g.$errorColor;
+
+      &::placeholder {
+        color: g.$errorColor;
+      }
     }
   }
 
@@ -61,8 +89,151 @@
     }
   }
 
+  &__nameLabel {
+    display: block;
+    font-weight: 500;
+
+    &--firstName {
+      margin-block-start: 10px;
+    }
+
+    + * {
+      margin-top: 5px;
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    // visibility: hidden;  不可
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &__radioText {
+    display: inline-block;
+    padding: 0.3em;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 8px;
+    align-items: center;
+
+    .contactForm__radio:focus + & {
+      box-shadow: 0 0 5px rgba(g.$mainColor, 0.7);
+    }
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: solid 2px g.$whiteColor;
+      border-radius: 50%;
+      outline: solid 1px g.$grayColor;
+
+      .contactForm__radio:checked + & {
+        background-color: g.$mainColor;
+      }
+    }
+  }
+
+  &__note {
+    color: g.$darkGrayColor;
+    font-size: g.rem(12);
+
+    &--name {
+      margin-top: 10px;
+    }
+  }
+
   &__error {
     display: none;
+    margin-top: 6px;
+    color: g.$errorColor;
+    font-weight: 500;
+    grid-auto-flow: column;
+    column-gap: .2em;
+    justify-content: start;
+    // align-items: start;
+
+    &::before {
+      content: "";
+      width: 1.25em;
+      height: 1.25em;
+      margin-top: 5px;
+      background-image: url(../../../../images/common/icon_attention.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--name {
+      margin-top: 16px;
+    }
+
+    .contactForm__item.is-error & {
+      display: grid;
+    }
+  }
+
+  &__privacy {
+    margin-block-start: 50px;
+    border: solid 1px g.$grayColor;
+    padding: 20px;
+
+    &Label {
+      // background-color: tan;
+      display: block;
+      width: fit-content;
+      margin-inline: auto;
+      margin-block-start: 20px;
+    }
+
+    &Checkbox {
+      position: absolute;
+      // visibility: hidden;
+        // 不可
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &CheckboxText {
+      // background-color: tan;
+      padding: 0.3em;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 10px;
+      align-items: center;
+
+      &::before {
+        content: "";
+        grid-area: 1 / 1;
+        width: 1.25em;
+        height: 1.25em;
+        border: solid 1px g.$grayColor;
+        background-color: g.$whiteColor;
+      }
+
+      .contactForm__privacyCheckbox:checked + &::after {
+        content: "";
+        grid-area: 1 / 1;
+        width: 0.5em;
+        height: 1em;
+        border-right: solid 3px g.$mainColor;
+        border-bottom: solid 3px g.$mainColor;
+        rotate: 45deg;
+        translate: 6px -2px;
+      }
+
+      .contactForm__privacyCheckbox:focus + & {
+        box-shadow: 0 0 5px rgba(g.$mainColor, 0.7);
+      }
+    }
+  }
+
+  &__btn {
+    margin-block-start: 50px;
   }
 
 
@@ -70,15 +241,81 @@
 
     &__item {
       grid-template-columns:
-        1fr 2fr;
+        calc(327 / 1084 * 100%) auto;
+      grid-template-rows:
+        auto
+        auto;
       column-gap: 40px;
-      row-gap: 0;
 
       &Head {
-        display: grid;
-        grid-auto-flow: column;
-        justify-content: space-between;align-items: center;
+        grid-row: 1 / -1;
+        justify-content: space-between;
       }
+
+      &--tel,
+      &--company {
+
+        &.is-error {
+          grid-template-rows:
+            repeat(3, auto);
+        }
+
+        > .contactForm__note {
+          grid-column: 2;
+        }
+      }
+
+      &--attribute {
+        grid-template-columns:
+          calc(327 / 1084 * 100%) auto auto;
+        grid-template-rows:
+          auto;
+        justify-content: start;
+        justify-items: normal;
+
+        > .contactForm__itemHead {
+          grid-column: 1;
+        }
+      }
+    }
+
+    &__nameField {
+      display: grid;
+      grid-template-columns:
+        1fr 1fr;
+      grid-template-rows:
+        repeat(3, auto);
+      column-gap: 20px;
+      grid-auto-flow: column;
+
+      > .contactForm__note {
+        grid-row: 4;
+        grid-column: 1 / 3;
+      }
+    }
+
+    &__nameLabel {
+
+      &--firstName {
+        margin-block-start: 0;
+      }
+    }
+
+    &__privacy {
+      margin-block-start: 80px;
+      padding: 40px;
+
+      &Text {
+        text-align: center;
+      }
+
+      &Label {
+        margin-block-start: 40px;
+      }
+    }
+
+    &__btn {
+      margin-block-start: 80px;
     }
   }
 

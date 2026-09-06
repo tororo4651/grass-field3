@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // 法人/個人別
   //--------------------------------------------
 
-  // name属性が'attribute'（法人／個人）の値が変化したら
+  // name属性が 'attribute'（法人／個人）の値が変化したら
   document.querySelectorAll('input[name="attribute"]').forEach(function(input) {
     input.addEventListener('change', function() {
-      // 選択された方の値を変数attributeに格納
+      // 選択された方の値を変数attribute に格納
       const attribute = document.querySelector('input[name="attribute"]:checked').value;
       const company = document.getElementById('company');
       const requireLabel = document.querySelector('label[for="company"] .require');
@@ -20,15 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         // 会社名のフォームを必須にする
         company.required = true;
-        requireLabel.style.display = 'inline'; 
+        requireLabel.style.display = 'inline';
       }
     });
   });
 
 
+
+
   // 簡易バリデーション
   //--------------------------------------------
-  
+
   // 入力時に簡易バリデーションを実施
   document.querySelectorAll('input,textarea,select').forEach(function(element) {
     // 値が変わったら実行
@@ -59,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+
+
+
   // 送信ボタン時に再チェック
   document.getElementById('submit').addEventListener('click', function() {
     document.querySelectorAll('input,textarea,select').forEach(function(element) {
@@ -81,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+
+
+
   // 個人情報保護方針同意
   //--------------------------------------------
 
@@ -88,14 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('agree').addEventListener('click', function() {
     // チェックされていたら
     if (this.checked) {
-      // 送信ボタンのdisabled属性を削除
+      // 送信ボタンの disabled属性を削除
       document.getElementById('submit').disabled = false;
     // チェックされていなかったら
     } else {
-      // 送信ボタンのdisabled属性を追加
+      // 送信ボタンの disabled属性を追加
       document.getElementById('submit').disabled = true;
     }
   });
-
 
 });

@@ -10,7 +10,7 @@
 /* プライマリ */
 .primaryBtn {
   appearance: none;
-  display: block;
+  width: 100%;
   max-width: 400px;
   padding: 20px;
   border: solid 2px g.$mainColor;
@@ -25,18 +25,36 @@
   display: grid;
   place-content: center;
 
+  @include g.hover-focus {
+    background-color: g.$lightMainColor2;
+    color: g.$textColor;
+  }
+
   &--white {
     border-color: g.$whiteColor;
     background-color: transparent;
     color: g.$whiteColor;
-    display: grid;
     grid-auto-flow: column;
     column-gap: 8px;
     align-items: center;
 
     @include g.hover-focus {
+      border-color: g.$whiteColor;
       background-color: rgb(255 255 255 / 30%);
       color: g.$whiteColor;
+    }
+  }
+
+  &--action {
+    border-color: transparent;
+    background-color: g.$accentColor;
+    color: g.$whiteColor;
+
+    @include g.hover-focus {
+      border-color: transparent;
+      background-color: g.$accentColor;
+      color: g.$whiteColor;
+      opacity: .7;
     }
   }
 
@@ -44,9 +62,18 @@
     margin-inline: auto;
   }
 
-  @include g.hover-focus {
-    background-color: g.$lightMainColor2;
-    color: g.$textColor;
+  &:disabled {
+    border-color: g.$grayColor;
+    background-color: g.$grayColor;
+    color: g.$whiteColor;
+    cursor: default;
+
+    @include g.hover-focus {
+      border-color: g.$grayColor;
+      background-color: g.$grayColor;
+      color: g.$whiteColor;
+      opacity: 1;
+    }
   }
 }
 

@@ -39,9 +39,9 @@
 
       <form class="secondarySection__form contactForm" action="#" method="POST" enctype="application/x-www-form-urlencoded">
 
-        <div class="contactForm__item">
+        <div class="contactForm__item is-error">
           <div class="contactForm__itemHead">
-            <lebel class="contactForm__label" for="contactType">お問い合わせ種類</lebel>
+            <label class="contactForm__label" for="contactType">お問い合わせ種類</label>
 
             <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
           </div><!-- /.contactForm__itemHead -->
@@ -61,65 +61,73 @@
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <label class="contactForm__label" for="contactMessage">お問い合わせ内容</label>
+        <div class="contactForm__item is-error">
+          <div class="contactForm__itemHead">
+            <label class="contactForm__label" for="contactMessage">お問い合わせ内容</label>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
-          <textarea class="contactForm__textarea" id="contactMessage" name="contactMessage" rows="10" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+          <textarea class="contactForm__textarea" id="contactMessage" name="contactMessage" rows="10" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
 
           <p class="contactForm__error" role="alert" aria-live="polite">お問い合わせ内容を入力してください。</p>
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <span class="contactForm__itemName" id="contactName">お名前</span>
+        <div class="contactForm__item is-error">
+          <div class="contactForm__itemHead">
+            <span class="contactForm__label">お名前</span>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
           <div class="contactForm__nameField">
             <label class="contactForm__nameLabel" for="contactLastName">姓</label>
 
             <input class="contactForm__input" id="contactLastName" type="text" name="contactLastName" placeholder="山田" required aria-labelledby="contactName">
 
-            <p class="contactForm__error" role="alert" aria-live="polite">姓を入力してください。</p>
+            <p class="contactForm__error contactForm__error--name" role="alert" aria-live="polite">姓を入力してください。</p>
 
-            <label class="contactForm__nameLabel" for="contactFirstName">名</label>
+            <label class="contactForm__nameLabel contactForm__nameLabel--firstName" for="contactFirstName">名</label>
 
             <input class="contactForm__input" id="contactFirstName" type="text" name="contactFirstName" placeholder="太郎" required aria-labelledby="contactName">
 
-            <p class="contactForm__error" role="alert" aria-live="polite">名を入力してください。</p>
+            <p class="contactForm__error contactForm__error--name" role="alert" aria-live="polite">名を入力してください。</p>
           </div><!-- /.contactForm__nameField -->
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <span class="contactForm__itemName" id="contactKanaName">フリガナ</span>
+        <div class="contactForm__item is-error">
+          <div class="contactForm__itemHead">
+            <span class="contactForm__label">フリガナ</span>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
           <div class="contactForm__nameField">
             <label class="contactForm__nameLabel" for="contactKanaLastName">セイ</label>
 
             <input class="contactForm__input" id="contactKanaLastName" type="text" name="contactLastName" placeholder="ヤマダ" required aria-labelledby="contactKanaName">
 
-            <p class="contactForm__error" role="alert" aria-live="polite">フリガナの姓を入力してください。</p>
+            <p class="contactForm__error contactForm__error--name" role="alert" aria-live="polite">フリガナの姓を入力してください。</p>
 
-            <label class="contactForm__nameLabel" for="contactKanaFirstName">メイ</label>
+            <label class="contactForm__nameLabel contactForm__nameLabel--firstName" for="contactKanaFirstName">メイ</label>
 
             <input class="contactForm__input" id="contactKanaFirstName" type="text" name="contactFirstName" placeholder="タロウ" required aria-labelledby="contactKanaName" aria-describedby="kanaNameNote">
 
-            <p class="contactForm__error" role="alert" aria-live="polite">フリガナの名を入力してください。</p>
+            <p class="contactForm__error contactForm__error--name" role="alert" aria-live="polite">フリガナの名を入力してください。</p>
 
-            <p class="contactForm__note" id="kanaNameNote">※全角カタカナでご入力下さい。</p>
+            <p class="contactForm__note contactForm__note--name" id="kanaNameNote">※全角カタカナでご入力下さい。</p>
           </div><!-- /.contactForm__nameField -->
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <label class="contactForm__label" for="contactEmail">メールアドレス</label>
+        <div class="contactForm__item is-error">
+          <div class="contactForm__itemHead">
+            <label class="contactForm__label" for="contactEmail">メールアドレス</label>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
           <input class="contactForm__input" id="contactEmail" type="email" name="contactEmail" placeholder="yamada@sample.co.jp" required>
 
@@ -127,10 +135,12 @@
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <label class="contactForm__label" for="contactTel">電話番号</label>
+        <div class="contactForm__item contactForm__item--tel is-error">
+          <div class="contactForm__itemHead">
+            <label class="contactForm__label" for="contactTel">電話番号</label>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
           <input class="contactForm__input" id="contactTel" type="text" inputmode="numeric" name="contactTel" placeholder="09012345678" required aria-describedby="contactTelNote">
 
@@ -140,10 +150,12 @@
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <span class="contactForm__itemName" id="contactAttribute">法人 / 個人</span>
+        <div class="contactForm__item contactForm__item--attribute">
+          <div class="contactForm__itemHead">
+            <span class="contactForm__label" id="contactAttribute">法人 / 個人</span>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div><!-- /.contactForm__itemHead -->
 
           <label>
             <input class="contactForm__radio" type="radio" name="contactAttribute" value="法人" required aria-labelledby="contactAttribute">
@@ -159,10 +171,12 @@
         </div><!-- /.contactForm__item -->
 
 
-        <div class="contactForm__item">
-          <label class="contactForm__label" for="contactCompany">会社名</label>
+        <div class="contactForm__item contactForm__item--company is-error">
+          <div class="contactForm__itemHead">
+            <label class="contactForm__label" for="contactCompany">会社名</label>
 
-          <span class="contactForm__tag primaryTag">必須</span>
+            <span class="contactForm__tag primaryTag primaryTag--require">必須</span>
+          </div>
 
           <input class="contactForm__input" id="contactCompany" type="text" name="contactCompany" placeholder="サンプル株式会社" required aria-describedby="contactCompanyNote">
 
@@ -175,12 +189,12 @@
         <div class="contactForm__privacy">
           <p class="contactForm__privacyText">「<a href="#">プライバシーポリシー</a>」をご確認いただき、個人情報の取扱いについて同意いただける場合は「同意する」を選択してください。</p>
 
-          <label>
-            <input class="contactForm__checkbox" type="checkbox" name="privacy" value="同意する" required>
+          <label class="contactForm__privacyLabel">
+            <input class="contactForm__privacyCheckbox" type="checkbox" name="privacy" value="同意する" required>
 
-            <span class="contactForm__checkboxText">個人情報保護方針に同意する</span>
+            <span class="contactForm__privacyCheckboxText">個人情報保護方針に同意する</span>
           </label>
-        </div>
+        </div><!-- /.contactForm__privacy -->
 
 
         <button class="contactForm__btn primaryBtn primaryBtn--action primaryBtn--center" disabled>入力内容を確認する</button>

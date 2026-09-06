@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*----------------------------------------
-	お問合せ専用
+	お問い合わせ専用
 ----------------------------------------*/
 
 
@@ -63,8 +63,8 @@ input[type="password"] {
 .is-error textarea,
 .is-error select,
 .is-error .selectWrap{
-  color: var(--c_alert);
   border-color: var(--c_alert);
+  color: var(--c_alert);
 }
 
 
@@ -104,16 +104,16 @@ select::-ms-expand { /* IE でも select の矢印を消す */
 
 input[type="radio"],
 input[type="checkbox"] {
-  opacity: 0; /*透明にして見えなくする*/
-  position: absolute; /*本来の配置から切り離す*/
+  position: absolute; /* 本来の配置から切り離す */
+  opacity: 0; /* 透明にして見えなくする */
 }
 
 
-/*クリック範囲*/
-input[type="radio"]+span,
-input[type="checkbox"]+span {
-  display: inline-block;
+/* クリック範囲 */
+input[type="radio"] + span,
+input[type="checkbox"] + span {
   position: relative;
+  display: inline-block;
   margin: 0 2em 0 0;
   padding: 0.3em 0.3em 0.3em 2em;
   line-height: 1;
@@ -122,16 +122,16 @@ input[type="checkbox"]+span {
 }
 
 
-/*フォーカス時*/
-input[type="radio"]:focus+span,
-input[type="checkbox"]:focus+span {
+/* フォーカス時 */
+input[type="radio"]:focus + span,
+input[type="checkbox"]:focus + span {
   outline: none;
   box-shadow: 0 0 5px rgba(55,149,47,0.7);
 }
 
 
-/*ラジオボタンスタイル*/
-input[type="radio"]+span:before {
+/* ラジオボタンスタイル */
+input[type="radio"] + span:before {
   content: "";
   position: absolute;
   top: 0.25em;
@@ -145,15 +145,15 @@ input[type="radio"]+span:before {
 }
 
 
-/*ラジオボタンチェック印（未選択）*/
-input[type="radio"]+span:after {
+/* ラジオボタンチェック印（未選択）*/
+input[type="radio"] + span:after {
   content: "";
   display: none;
 }
 
 
-/*ラジオボタンチェック印（選択）*/
-input[type="radio"]:checked+span:after {
+/* ラジオボタンチェック印（選択）*/
+input[type="radio"]:checked + span:after {
   display: block;
   position: absolute;
   top: 0.45em;
@@ -168,8 +168,9 @@ input[type="radio"]:checked+span:after {
 }
 
 
-/*チェックボックススタイル*/
-input[type="checkbox"]+span:before {
+
+/* チェックボックススタイル */
+input[type="checkbox"] + span:before {
   position: absolute;
   top: 0.3em;
   left: 0;
@@ -183,15 +184,15 @@ input[type="checkbox"]+span:before {
 }
 
 
-/*チェックボックス未チェック時*/
-input[type="checkbox"]+span:after {
+/* チェックボックス未チェック時 */
+input[type="checkbox"] + span:after {
   content: "";
   display: none;
 }
 
 
-/*チェックボックスチェック時*/
-input[type="checkbox"]:checked+span:after {
+/* チェックボックスチェック時 */
+input[type="checkbox"]:checked + span:after {
   display: block;
   position: absolute;
   top: 0.3em;
@@ -224,6 +225,7 @@ input[type="checkbox"]:checked+span:after {
 .input-item legend {
   display: contents; /* マークアップ上のセマンティクスは残しつつレイアウト上はこの要素を無視する */
 }
+
 
 @media (min-width: 768px) {
   .input-item {
@@ -276,21 +278,24 @@ input[type="checkbox"]:checked+span:after {
 }
 
 
-/*注意書き*/
+/* 注意書き */
 .input-item__note {
   margin-top: 10px;
   color: var(--c_dark-gray);
   font-size: 12px;
 }
 
-/*名前・フリガナ*/
+
+/* 名前・フリガナ */
 .name-layout {
   display: grid;
   gap: 10px;
 }
+
 @media (min-width: 768px) {
   .name-layout {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
     gap: 20px;
   }
 }
@@ -305,14 +310,15 @@ input[type="checkbox"]:checked+span:after {
 /* エラーメッセージ */
 .error-text {
   display: none;
-  align-items: center;
   margin-top: 16px;
   color: var(--c_alert);
   font-weight: bold;
+  align-items: center;
 }
 
 .input-item__field.is-error .error-text {
   display: block;
+   /* ？ display: grid; */
 }
 
 .error-text::before {
@@ -326,24 +332,31 @@ input[type="checkbox"]:checked+span:after {
 }
 
 
+
+
 /*----------------------------------------
 	個人情報保護方針チェック
 ----------------------------------------*/
+
 .privacy-box {
   margin: 50px 0;
-  padding: 20px;
   border: 1px solid var(--c_gray);
+  padding: 20px;
 }
+
 .privacy-box__check {
   margin-top: 20px;
   text-align: center;
 }
+
+
 @media (min-width: 768px) {
   .privacy-box {
     margin: 80px 0;
     padding: 40px;
     text-align: center;
   }
+
   .privacy-box__check {
     margin-top: 50px;
   }

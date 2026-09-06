@@ -12,6 +12,18 @@ import './modules/common.js';
 
 
 
+// お問い合わせフォームのプライバシーポリシーのチェックボックス切り替え
+
+const privacyCheckbox = document.querySelector('.contactForm__privacyCheckbox');
+const contactFormBtn = document.querySelector('.contactForm__btn');
+
+privacyCheckbox.addEventListener('click', function(e) {
+  contactFormBtn.disabled = !privacyCheckbox.checked;
+}, false);
+
+
+
+
 // const test = document.querySelector('.test');
 // test.style.color = 'plum';
 // test.style.fontSize = '50px';
