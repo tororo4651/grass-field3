@@ -1,15 +1,16 @@
 // Utilityクラス・ユーティリティクラス・汎用クラス・ヘルパークラス
 
 
+
 // 変数、ミックスイン、関数
 @use "../global/" as g;
 
 
 
-/* 上マージン */
+/* マージン・上 */
 @for $i from 1 through 10 {
   .u-mt#{$i * 10} {
-    margin-top: $i * 10px;
+    margin-top: $i * 10px !important;
   }
 }
 

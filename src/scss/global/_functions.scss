@@ -12,14 +12,20 @@
 
 
 
+// 変数
+@use "variables";
+
+
+
+
 // px を rem に変換
 @function rem($size, $root: 16) {
   @return math.div($size, $root) * 1rem;
-  // @return math.div($size, $root) + rem;
-    // "rem" は、不可。
   // @return calc($size / $root * 1rem);
+  // @return math.div($size, $root) + rem;
+    // 不可  "rem"
   // @return calc($size / $root) + rem;
-    // "rem" は、不可。
+    // 不可  "rem"
   }
 
 
@@ -27,7 +33,8 @@
 
 // 合計
 @function sum($num1: 10, $num2: 20) {
-  @return $num1 + $num2 + px;
-  // @return calc(($num1 + $num2) * 1px);
+  @return calc(($num1 + $num2) * 1px);
+  // @return $num1 + $num2 + px;
+    // 不可  "px"
   // @return $num1 + $num2 * 1px;
 }

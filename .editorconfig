@@ -17,4 +17,4 @@ trim_trailing_whitespace = false
 
 
 # HTML、CSS
-[*.{html, css}]
+[*.{html,css}]

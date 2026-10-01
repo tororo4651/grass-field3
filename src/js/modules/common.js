@@ -1,7 +1,7 @@
 // 共通
 
 
-// グローバルナビゲーションの開閉
+/* グローバルナビゲーションの開閉 */
 
 const gNavBtn = document.querySelector('.gNavBtn');
 const gNav = document.querySelector('.gNav');
@@ -59,6 +59,7 @@ width992.addEventListener('change', switchMedia, false);
 
 
 
+// 練習
 
 // const test = document.querySelector('.test');
 // test.style.color = 'plum';
@@ -69,27 +70,24 @@ width992.addEventListener('change', switchMedia, false);
 
 // ES Modules
 
-// 変数
-// export const text1 = 'おはよう。';
+// 変数（ text1 ）
+// const text1 = 'おはよう。';
+
 
 // 関数（あいさつ）
-// export const greet = (name) => {
+// const greet = (name) => {
 //   console.log(`こんにちは。
 // ${name}さん。`);
 // };
 
 
 // normal export
-
 // export { text1, greet };
 
 
-
 // default export
-
-// const text2 = 'こんにちは。';
-
-// export default text2;
+// export default text1;
+// export default greet;
 
 
 
@@ -99,8 +97,10 @@ width992.addEventListener('change', switchMedia, false);
 // import $ from 'jquery';
 
 // $('.test').css({
+//   marginBlockStart: '80px',
+//   // 不可 80
+//   'margin-inline-start': '100px',
 //   color: 'blue',
-//   fontSize: 30,
-//   'margin-top': '50px',
-//   paddingLeft: 100
+//   backgroundColor: 'gold',
+//   'font-size': '50px',
 // });

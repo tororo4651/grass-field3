@@ -29,9 +29,17 @@
   }
 }
 
+// .test {
+//   color: red;
+
+//   @include mq(sm-min) {
+//     color: blue;
+//   }
+// }
+
 
 @mixin mq-min($width: 768) {
-  @media (min-width: $width + px) {
+  @media (min-width: $width * 1px) {
     @content;
   }
 }
@@ -61,22 +69,22 @@
 
 
 
-// rem に変換（フォントサイズ）
+// px を rem に変換（フォントサイズ）
 @mixin rem-fz($size, $root: 16) {
   font-size: math.div($size, $root) * 1rem;
-  // font-size: math.div($size, $root) + rem;
-    // "rem" は、不可。
   // font-size: calc($size / $root * 1rem);
+  // font-size: math.div($size, $root) + rem;
+    // 不可  "rem"
   // font-size: calc($size / $root) + rem;
-    // "rem" は、不可。
+    // 不可  "rem"
 }
 
 
-// rem に変換（マージン）
+// px を rem に変換（マージン）
 @mixin rem-margin($size, $root: 16) {
   margin: math.div($size, $root) * 1rem;
-  // margin: math.div($size, $root) + rem;
   // margin: calc($size / $root * 1rem);
+  // margin: math.div($size, $root) + rem;
   // margin: calc($size / $root) + rem;
 }
 
@@ -89,6 +97,14 @@
     @content;
   }
 }
+
+// .test {
+//   @include hover {
+//     color: blue;
+//   }
+// }
+
+
 
 
 // マウスオーバーとフォーカス
@@ -110,3 +126,7 @@
     clear: both;
   }
 }
+
+// .test {
+//   @include clearfix;
+// }
